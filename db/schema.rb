@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_04_201429) do
+ActiveRecord::Schema.define(version: 2018_11_04_221420) do
+
+  create_table "band_instruments", force: :cascade do |t|
+    t.string "bi_name"
+    t.string "bi_brand"
+    t.string "bi_type"
+    t.integer "band_id"
+    t.integer "BandMember_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["BandMember_id"], name: "index_band_instruments_on_BandMember_id"
+    t.index ["band_id"], name: "index_band_instruments_on_band_id"
+  end
 
   create_table "band_members", force: :cascade do |t|
     t.string "bm_name"

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bi_name: MyString
+  bi_brand: MyString
+  bi_type: MyString
+  band: one
+  BandMember: one
+
+two:
+  bi_name: MyString
+  bi_brand: MyString
+  bi_type: MyString
+  band: two
+  BandMember: two
