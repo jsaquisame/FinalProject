@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bm_name: MyString
+  biography: MyString
+  band: one
+
+two:
+  bm_name: MyString
+  biography: MyString
+  band: two
