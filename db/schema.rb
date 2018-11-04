@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_04_221420) do
+ActiveRecord::Schema.define(version: 2018_11_04_222642) do
 
   create_table "band_instruments", force: :cascade do |t|
     t.string "bi_name"
@@ -39,6 +39,21 @@ ActiveRecord::Schema.define(version: 2018_11_04_221420) do
     t.string "bandtype"
     t.integer "band_contact_number"
     t.string "band_biography"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string "client_name"
+    t.integer "client_contact_number"
+    t.string "client_review"
+    t.string "client_email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "genre_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
