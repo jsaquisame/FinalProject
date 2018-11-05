@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_04_232244) do
+ActiveRecord::Schema.define(version: 2018_11_05_023305) do
 
   create_table "band_instruments", force: :cascade do |t|
     t.string "bi_name"
@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 2018_11_04_232244) do
     t.datetime "date"
     t.string "venue"
     t.integer "Gigtype_id"
-    t.integer "song_id"
     t.integer "client_id"
     t.integer "band_id"
     t.datetime "created_at", null: false
@@ -79,7 +78,6 @@ ActiveRecord::Schema.define(version: 2018_11_04_232244) do
     t.index ["Gigtype_id"], name: "index_gigs_on_Gigtype_id"
     t.index ["band_id"], name: "index_gigs_on_band_id"
     t.index ["client_id"], name: "index_gigs_on_client_id"
-    t.index ["song_id"], name: "index_gigs_on_song_id"
   end
 
   create_table "songs", force: :cascade do |t|
