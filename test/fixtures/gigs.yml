@@ -3,17 +3,17 @@
 one:
   fee: 1
   about: MyString
-  date: 2018-11-05 02:33:05
+  date: 2018-11-07 02:17:28
   venue: MyString
-  Gigtype: one
+  gig_type: one
   client: one
   band: one
 
 two:
   fee: 1
   about: MyString
-  date: 2018-11-05 02:33:05
+  date: 2018-11-07 02:17:28
   venue: MyString
-  Gigtype: two
+  gig_type: two
   client: two
   band: two

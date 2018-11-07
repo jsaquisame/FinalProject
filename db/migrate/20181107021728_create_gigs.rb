@@ -5,7 +5,7 @@ class CreateGigs < ActiveRecord::Migration[5.2]
       t.string :about
       t.datetime :date
       t.string :venue
-      t.references :Gigtype, foreign_key: true
+      t.references :gig_type, foreign_key: true
       t.references :client, foreign_key: true
       t.references :band, foreign_key: true
 

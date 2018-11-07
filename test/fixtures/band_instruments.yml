@@ -4,12 +4,12 @@ one:
   bi_name: MyString
   bi_brand: MyString
   bi_type: MyString
+  band_member: one
   band: one
-  BandMember: one
 
 two:
   bi_name: MyString
   bi_brand: MyString
   bi_type: MyString
+  band_member: two
   band: two
-  BandMember: two

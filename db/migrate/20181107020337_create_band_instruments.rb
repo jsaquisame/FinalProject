@@ -4,8 +4,8 @@ class CreateBandInstruments < ActiveRecord::Migration[5.2]
       t.string :bi_name
       t.string :bi_brand
       t.string :bi_type
+      t.references :band_member, foreign_key: true
       t.references :band, foreign_key: true
-      t.references :BandMember, foreign_key: true
 
       t.timestamps
     end
