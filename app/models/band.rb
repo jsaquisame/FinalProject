@@ -3,5 +3,7 @@ class Band < ApplicationRecord
 
     has_many :gigs
     has_many :clients, through: :gigs
+    
+    mount_uploader :image, LogoUploader
 
 end

@@ -76,7 +76,8 @@ genre_indie = Genre.create(genre_name: "Indie")
 genre_rnb = Genre.create(genre_name: "Rhythm and Blues")
 genre_reggae = Genre.create(genre_name: "Reggae")
 genre_country = Genre.create(genre_name: "Country")
-genre_alternative = Genre.create(genre_name: "alternative")
+genre_alternative = Genre.create(genre_name: "Alternative")
+genre_opm = Genre.create(genre_name: "OPM")
 
 #song
 song_achy = Song.create(song_name: "Achy Breaky Heart",
@@ -109,12 +110,35 @@ song_cali = Song.create(song_name: "Californication ",
                             album: "Californication",
                             genre: genre_indie)
        
-song_cali = Song.create(song_name: "Drive ",
-                            song_artist:" Red Hot Chili Pepers",
-                            popularity: "8",
-                            album: "Make Yourself",
-                            genre: genre_alternative)
+song_redbone = Song.create(song_name: "Red Bone ",
+                            song_artist:" Childish Gambino",
+                            popularity: "10",
+                            album: "Awaken, My Love!",
+                            genre: genre_rnb)
 
+song_lotb = Song.create(song_name: "Love On The Brain ",
+                              song_artist:" Rihanna",
+                              popularity: "10",
+                              album: "Anti",
+                              genre: genre_pop)
+
+song_tat = Song.create(song_name: "Time After Time ",
+                              song_artist:" Cyndi Lauper",
+                              popularity: "10",
+                              album: "She's Sounsual ",
+                              genre: genre_pop)
+
+song_illbe = Song.create(song_name: "I'll Be ",
+                              song_artist:" Edwin McCain",
+                              popularity: "8",
+                              album: "Misguided Roses",
+                              genre: genre_pop)
+
+song_ybsh = Song.create(song_name: "You'll Be Safe Here ",
+                                    song_artist:" River Maya",
+                                    popularity: "10",
+                                    album: "You'll Be Safe Here",
+                                    genre: genre_opm)
 #client
 first_client = Client.create(client_name: "Lee Hyo",
                              client_contact_number: "204987624",
