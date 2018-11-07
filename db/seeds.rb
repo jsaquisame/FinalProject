@@ -76,6 +76,7 @@ genre_indie = Genre.create(genre_name: "Indie")
 genre_rnb = Genre.create(genre_name: "Rhythm and Blues")
 genre_reggae = Genre.create(genre_name: "Reggae")
 genre_country = Genre.create(genre_name: "Country")
+genre_alternative = Genre.create(genre_name: "alternative")
 
 #song
 song_achy = Song.create(song_name: "Achy Breaky Heart",
@@ -86,9 +87,33 @@ song_achy = Song.create(song_name: "Achy Breaky Heart",
 song_kissme = Song.create(song_name: "Kiss me",
                             song_artist:" Sixpence None The Richer",
                             popularity: "10",
-                            album: "N/A",
+                            album: "Sixpence None the Richer",
                             genre: genre_pop)
 
+song_wagon_wheel = Song.create(song_name: "Wagon Wheel",
+                            song_artist:" Darius Rucker",
+                            popularity: "9",
+                            album: "True Believers",
+                            genre: genre_country)
+
+song_youre_a_god = Song.create(song_name: "You're a God",
+                            song_artist:" Vertical Horizon",
+                            popularity: "9",
+                            album: "Everything You Want",
+                            genre: genre_gospel)       
+              
+
+song_cali = Song.create(song_name: "Californication ",
+                            song_artist:" Red Hot Chili Pepers",
+                            popularity: "9",
+                            album: "Californication",
+                            genre: genre_indie)
+       
+song_cali = Song.create(song_name: "Drive ",
+                            song_artist:" Red Hot Chili Pepers",
+                            popularity: "8",
+                            album: "Make Yourself",
+                            genre: genre_alternative)
 
 #client
 first_client = Client.create(client_name: "Lee Hyo",

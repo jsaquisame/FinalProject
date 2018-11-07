@@ -1,2 +1,5 @@
-<h1>Band#show</h1>
-<p>Find me in app/views/band/show.html.erb</p>
+<%= render partial: 'band',
+            object: @band,
+            locals: { show_link: false } %>
+
+<%= link_to 'Menu', root_path %>

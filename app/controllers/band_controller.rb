@@ -1,6 +1,6 @@
 class BandController < ApplicationController
   def index
-    @show_band = Band.all
+    @band_list = Band.order(:band_name)
   end
 
   def show

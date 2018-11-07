@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h2>List of Songs </h2>
+    <% @list_song.each do |song| %> 
+        <div class="details">
+            <p><b> <%= song.song_name%></b></p>
+            <p><b>Genre: </b> <%= song.genre.genre_name%>
+            <b>Artist: </b> <%= song.song_artist%>
+            <b>Popularity: </b> <%= song.popularity%>
+            <b>Album: </b> <%= song.album%>
+            <b>Language: </b> <%= song.language%></p>
+        </div>
+    <% end %>
+</div>
