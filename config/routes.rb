@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'band_member/index'
+  get 'band_member/show'
   get 'band/index'
   get 'band/show'
   

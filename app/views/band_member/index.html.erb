@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <h1>Welcome to AmberLite </h1>
+    <% @list_band_member.each do |member| %> 
+        <div class="details">
+            <p><b>Name: </b> <%= member.bm_name%></p>
+            <p><b>Biography: </b> <%= member.biography%></p>
+        </div>
+    <% end %>
+</div>
