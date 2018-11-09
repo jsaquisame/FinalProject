@@ -6,4 +6,9 @@ class Band < ApplicationRecord
     
     mount_uploader :image, LogoUploader
 
+    validates :band_name, presence: true
+    validates :founded, presence: true
+    validates :bandtype, presence: true
+    validates :band_contact_number, presence: true
+    validates :band_biography, presence: true
 end
