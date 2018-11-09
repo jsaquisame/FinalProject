@@ -1,4 +1,6 @@
 <div class="container-fluid">
+
+
     <h2>List of Songs </h2>
     <ul class="list-group">
         <li><h1><%= link_to 'Sort By Genre' , '/song/genre'  %></h1></li>
@@ -6,10 +8,18 @@
        
     </ul>
     <ul class="list-group">
+    <%= paginate @list_song %>
         <% @list_song.each do |song| %>
-            <li class="list-group-item">
-                <%= link_to song.song_name, song  %>  
-            </li>
+            <% date_dif = Date.today.mjd - song.created_at.to_date.mjd %>
+                <% if date_dif < 2 %>
+                    <li class="list-group-item">
+                        <span class="badge badge-danger">New</span><%= link_to song.song_name, song  %>  
+                    </li>
+                <% else %>
+                    <li class="list-group-item">
+                        <%= link_to song.song_name, song  %>  
+                    </li>    
+                <% end %>
         <% end %>
     </ul>
 </div>

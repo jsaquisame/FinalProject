@@ -2,7 +2,7 @@ class SongController < ApplicationController
   
   def index
     @list_genre = Genre.all
-    @list_song = Song.all
+    @list_song = Song.order(:song_name).page(params[:page]).per(8)
   end
   
   def show

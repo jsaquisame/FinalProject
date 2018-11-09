@@ -45,6 +45,7 @@ gem 'jquery-rails'
 gem 'carrierwave' #file uploads
 gem 'mini_magick' #image magick ruby bindings
 
+gem 'kaminari' #pagination
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

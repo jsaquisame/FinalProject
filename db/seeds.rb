@@ -79,6 +79,7 @@ genre_country = Genre.create(genre_name: "Country")
 genre_alternative = Genre.create(genre_name: "Alternative")
 genre_opm = Genre.create(genre_name: "OPM")
 
+
 #song
 song_achy = Song.create(song_name: "Achy Breaky Heart",
                         song_artist:" Billy Ray Cyrus",
@@ -165,4 +166,10 @@ first_gig = Gig.create(fee: 500,
 #Playlist
 first_playlist = Playlist.create(gig:first_gig,
                                  song: song_achy)
-                        
+
+# genre_emo = Genre.create(genre_name: "Emotional ")
+# song_swgd = Song.create(song_name: "Sugar We're going down ",
+#                                     song_artist:" Fall Out Boy",
+#                                     popularity: "10",
+#                                     album: "From Under the Cork Tree",
+#                                     genre: genre_emo)                        
