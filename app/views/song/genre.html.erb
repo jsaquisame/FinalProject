@@ -1,0 +1,16 @@
+<div class="container-fluid">
+<h1>Sort by Genre</h1>
+
+<% @list_genre.each do |genre| %>
+    <p><span class="badge badge-pill badge-info"><%=  genre.genre_name  %></p>      
+        <ul class="list-group" > <% @song.each do |song| %>
+            <% if song.genre.genre_name == genre.genre_name %> 
+                <li class="list-group-item">
+                     <%=  song.song_name  %>
+                </li>
+            <% end %>
+        <% end %>
+        </ul>
+<% end %>
+
+</div>

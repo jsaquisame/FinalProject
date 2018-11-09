@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h1>Sort by Popularity</h1>
+
+    <% @song_list.each do |song| %>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center"> 
+                <p><strong>Name: <%=  song.song_name  %></strong>
+                <span class="badge badge-primary badge-pill">Popularity: <%=  song.popularity  %></p> </span>
+            </li>     
+        <% end %>
+        <h1><%= link_to 'Back to Songs' , '/song/index'  %></h1>
+
+</div>
