@@ -1,4 +1,4 @@
-<h2> <%= @show_song.song_name %>  </h2> <img src="<%= @show_song.image %>" alt="..." class="rounded">
+<h2> <%= @show_song.song_name %>  </h2> <p><%= image_tag @show_song.image.url  , style:"width:200px; height: 200px" %>
     <ul class="list-group ">
         <li class="list-group-item"><b>Song Artist: </b>"  <%= @show_song.song_artist %> "</li>
         <li class="list-group-item"><b>Popularity: </b>"  <%= @show_song.popularity %> "</li>

@@ -31,8 +31,9 @@ class SongController < ApplicationController
 
   def popularity
     @song_list = Song.order("popularity")
-    @song = Song.all
+    @song = Song.where('popularity < 9').page(params[:page]).per(8)
   end
+
 
 
 

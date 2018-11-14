@@ -1,6 +1,6 @@
 <div class="band">
     <% if band.image.present? %>
-        <p><%= image_tag band.image.url %></p>
+        <p><%= image_tag band.image.url, style:"width:100%; height: 80%" %></p>
 
     <% end %>
     <p><b>Founded:</b> <%= band.founded%></p>
