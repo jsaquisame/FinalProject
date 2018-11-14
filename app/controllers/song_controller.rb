@@ -2,7 +2,22 @@ class SongController < ApplicationController
   
   def index
     @list_genre = Genre.all
-    @list_song = Song.order(:song_name).page(params[:page]).per(8)
+    @list_song = if params[:term]
+      Song.where('song_name LIKE ?', "%#{params[:term]}%").page(params[:page]).per(8)
+    else
+      Song.order(:song_name).page(params[:page]).per(8)
+    end
+
+
+
+      # Song.order(:song_name).page(params[:page]).per(8)
+
+    # search
+    def task_params
+      params.require(:list_song).permit(:song_name, :genre, :popularity, :album)
+    end
+
+     
   end
   
   def show
@@ -18,6 +33,7 @@ class SongController < ApplicationController
     @song_list = Song.order("popularity")
     @song = Song.all
   end
+
 
 
 end

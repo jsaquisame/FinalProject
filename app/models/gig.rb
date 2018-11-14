@@ -4,7 +4,6 @@ class Gig < ApplicationRecord
   belongs_to :band
 
   has_many :songs
-  has_many :clients
   
   validates :fee, presence: true
   validates :about, presence: true

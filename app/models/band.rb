@@ -11,4 +11,8 @@ class Band < ApplicationRecord
     validates :bandtype, presence: true
     validates :band_contact_number, presence: true
     validates :band_biography, presence: true
+
+    def name
+        band_name
+    end
 end

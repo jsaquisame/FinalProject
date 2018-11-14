@@ -5,5 +5,9 @@ class Client < ApplicationRecord
     validates :client_name, presence: true
     validates :client_contact_number, presence: true
     validates :client_email, presence: true
+
+    def name
+        client_name
+    end
     
 end

@@ -1,3 +1,10 @@
+<p> You have visited  the page <%= pluralize @visit_count, 'time' %></p>
+
+<form action="/song/index" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <input type="text" name="term" id="term" />
+  <input type="submit" name="commit" value="Search" data-disable-with="Search" />
+</form>
+
 <div class="container-fluid">
 
 
@@ -7,6 +14,7 @@
         <li><h1><%= link_to 'Sort By Popularity' , '/song/popularity'  %></h1></li>
        
     </ul>
+    <% if @result.nil? %>
     <ul class="list-group">
     <%= paginate @list_song %>
         <% @list_song.each do |song| %>
@@ -22,4 +30,6 @@
                 <% end %>
         <% end %>
     </ul>
+    <% end %>
+    
 </div>
