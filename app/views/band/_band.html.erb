@@ -1,7 +1,9 @@
-<div class="band">
+<div class="band p-0">
     <% if band.image.present? %>
-        <p><%= image_tag band.image.url, style:"width:100%; height: 80%" %></p>
-
+    <div class="jumbotron p-0">
+        <p><%= image_tag band.image.url, :class => "img-fluid img-responsive max-width:100%; height: auto;"%></p>
+        <%# , style:"width:100%; height: 100%"  %>
+    </div>
     <% end %>
     <p><b>Founded:</b> <%= band.founded%></p>
     <p><b>Band Type: </b> <%= band.bandtype%></p>

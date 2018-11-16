@@ -7,12 +7,11 @@ class SongController < ApplicationController
     else
       Song.order(:song_name).page(params[:page]).per(8)
     end
-
-
-
+    
+    @display_cart = Song.where('id LIKE?' , "%#{  session[:favourite_song] }%")
       # Song.order(:song_name).page(params[:page]).per(8)
 
-    # search
+    # search`
     def task_params
       params.require(:list_song).permit(:song_name, :genre, :popularity, :album)
     end
@@ -32,6 +31,21 @@ class SongController < ApplicationController
   def popularity
     @song_list = Song.order("popularity")
     @song = Song.where('popularity < 9').page(params[:page]).per(8)
+  end
+
+  #add a song by id in favourite by session
+  #post Post /song/:id/mark_as_favourite
+  def mark_as_favourite
+    id = params[:id].to_i
+    unless session[:favourite_song].include?(id)
+      session[:favourite_song] << id 
+    end
+    redirect_to "/song/index"
+  end
+
+  def clear_favourites
+    session[:favourite_song] = []
+    redirect_to "/song/index"
   end
 
 
