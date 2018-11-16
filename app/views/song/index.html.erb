@@ -1,17 +1,28 @@
 <p> You have visited  the page <%= pluralize @visit_count, 'time' %></p>
+<h2> Play List</h2>
 
-<form action="/song/index" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-  <input type="text" name="term" id="term" />
-  <input type="submit" name="commit" value="Search" data-disable-with="Search" />
-</form>
+<% if session[:favourite_song]  %>
+    <%= debug session[:favourite_song] %>
+    <% @display_cart.each do |song| %>
+        <li class="list-group-item">
+            <span class="badge badge-danger">Cart</span>QWE<%= link_to song.song_name, song  %>  
+        </li>
+        <% end %>
+    <% session %>
+    <%= link_to 'Clear PlayList', clear_favourites_song_index_path , method: :post%>
+<%end %>
 
 <div class="container-fluid">
 
 
     <h2>List of Songs </h2>
     <ul class="list-group">
-        <li><h1><%= link_to 'Sort By Genre' , '/song/genre'  %></h1></li>
-        <li><h1><%= link_to 'Sort By Popularity' , '/song/popularity'  %></h1></li>
+        <li class="list-group-item"><h1><%= link_to 'Sort By Genre' , '/song/genre'  %></h1></li>
+        <li class="list-group-item"><h1><%= link_to 'Sort By Popularity' , '/song/popularity'  %></h1></li>
+        <li class="list-group-item"> <form action="/song/index" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="text" name="term" id="term" />
+            <input type="submit" name="commit" value="Search" data-disable-with="Search" />
+        </form> </li>
        
     </ul>
     <% if @result.nil? %>
@@ -21,10 +32,12 @@
             <% date_dif = Date.today.mjd - song.created_at.to_date.mjd %>
                 <% if date_dif < 2 %>
                     <li class="list-group-item">
+                        <span class="badge badge-success"><%= link_to 'Add to PlayList', mark_as_favourite_song_path(song), method: :post %></span>
                         <span class="badge badge-danger">New</span><%= link_to song.song_name, song  %>  
                     </li>
                 <% else %>
                     <li class="list-group-item">
+                        <span class="badge badge-success"><%= link_to 'Add to PlayList', mark_as_favourite_song_path(song), method: :post %></span>
                         <%= link_to song.song_name, song  %>  
                     </li>    
                 <% end %>
@@ -33,3 +46,5 @@
     <% end %>
     
 </div>
+
+

@@ -4,6 +4,6 @@ class BandController < ApplicationController
   end
 
   def show
-    @band = Band.find(params[:id])
+    @band = Band.order(:band_name)
   end
 end
